@@ -1,0 +1,16 @@
+{
+    "name": "HavocAndSouls",
+    "rootNamespace": "HavocAndSouls",
+    "references": [
+        "GUID:8128d4fdc042713438955a4f4f8a0039"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

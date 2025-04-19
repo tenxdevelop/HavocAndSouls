@@ -1,0 +1,13 @@
+//////////////////////////////////////////////////////////////////
+//                         HAVOC AND SOULS                      //
+//////////////////////////////////////////////////////////////////
+
+using SkyForge.Extension;
+
+namespace HavocAndSouls
+{
+    public class MainMenuEnterParams : SceneEnterParams
+    {
+        
+    }
+}
