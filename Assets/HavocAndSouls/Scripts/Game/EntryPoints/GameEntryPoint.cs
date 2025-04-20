@@ -58,12 +58,20 @@ namespace HavocAndSouls
 
         private void RegisterViewModel(DIContainer container)
         {
-            
+            container.RegisterSingleton<IUIRootViewModel>(factory => new UIRootViewModel());
         }
 
         private void BindView(DIContainer container)
         {
+            var loadService = container.Resolve<LoadService>();
             
+            //Init UIRootView
+            var uIRootPrefab = loadService.LoadPrefab<UIRootView>(LoadService.PREFAB_UI_ROOT);
+            var uIRootView = Object.Instantiate(uIRootPrefab);
+            Object.DontDestroyOnLoad(uIRootView);
+            
+            m_uIRootViewModel = container.Resolve<IUIRootViewModel>();
+            uIRootView.Bind(m_uIRootViewModel);
         }
         
         private void OnLoadScene(Scene scene, LoadSceneMode loadSceneMode, SceneEnterParams sceneEnterParams)
@@ -77,7 +85,7 @@ namespace HavocAndSouls
         
         private void LoadBootstrapScene()
         {
-            m_uIRootViewModel?.ShowLoadingScreen();
+            m_uIRootViewModel.ShowLoadingScreen();
         }
         
         private IEnumerator LoadMainMenuScene(SceneEnterParams sceneEnterParams)
@@ -90,7 +98,7 @@ namespace HavocAndSouls
 
             mainMenuEntryPoint.Run();
             
-            m_uIRootViewModel?.HideLoadingScreen();
+            m_uIRootViewModel.HideLoadingScreen();
         }
     }
 

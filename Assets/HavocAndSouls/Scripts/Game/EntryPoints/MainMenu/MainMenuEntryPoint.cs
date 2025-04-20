@@ -23,8 +23,7 @@ namespace HavocAndSouls
             MainMenuViewModelRegistrar.RegisterViewModels(m_container, mainMenuEnterParams);
             MainMenuViewRegistrar.RegisterViews(m_container);
             
-            Debug.Log("start main menu");
-            yield return null;
+            yield return new WaitForSeconds(2.0f);
         }
 
         public IObservable<SceneExitParams> Run()

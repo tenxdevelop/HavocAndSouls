@@ -2,15 +2,12 @@
 //                         HAVOC AND SOULS                      //
 //////////////////////////////////////////////////////////////////
 
-using SkyForge.Reactive;
 using SkyForge.MVVM;
 
 namespace HavocAndSouls
 {
-    public interface IUIRootViewModel : IViewModel
+    public class UIRootView : View
     {
-        ReactiveProperty<bool> IsShowLoadingScreen { get; }
-        void ShowLoadingScreen();
-        void HideLoadingScreen();
+        
     }
 }
